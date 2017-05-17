@@ -1,27 +1,35 @@
-# resume
-
-> A Vue.js project
-
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run all tests
-npm test
-```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+#个人练习作品集
+收录了个人学习前端过程中的一部分练习代码，主要有三类
+* 原生JS组件
+    * Tab标签页
+        * (代码)[./tab.html]
+        * (demo)[]
+    * goTop回到顶部 
+        * (代码)[]
+        * (demo)[]
+    * collapse折叠面板
+        * (代码)[]
+        * (demo)[]
+* jQuery组件
+    * lazyload懒加载 
+        * (代码)[]
+        * (demo)[]
+    * carousel轮播 
+        * (代码)[]
+        * (demo)[]
+    * modal模态框 
+        * (代码)[]
+        * (demo)[]
+    * 瀑布流 
+        * (代码)[]
+        * (demo)[]
+    * 木桶布局
+        * (代码)[]
+        * (demo)[]
+* 其他
+    * 静态页面 
+        * (代码)[]
+        * (demo)[]
+    * 查询天气的命令行工具
+        * (代码)[]
+        * (demo)[]

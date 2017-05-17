@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #go-top{
+            padding: 20px;
+            background: rgb(254, 197, 3);
+            position: fixed;
+            right: 100px;
+            bottom: 100px;
+            color: #fff;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        body{
+            background-color: #999;
+            height: 2000px;
+        }
+        .alert{
+            font-size: 60px;
+            margin: 0 auto;
+            width: 200px;
+        }
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="alert">往下滚滑轮</div>
+    <div id="go-top">回到顶部</div>
+</body>
+<script>
+
+    function GoTop(options){
+        var defaultOptions = {
+
+        };
+        this.options = Object.assign({}, defaultOptions, options);
+        this.init();
+    }
+
+    GoTop.prototype = {
+        init: function(){
+            var _this = this;
+            this.options.element.addEventListener("click", function () {
+                window.scroll(0, 0);
+            })
+            window.addEventListener("scroll", function(){
+                _this.checkShow();
+            })
+            this.checkShow()
+        },
+
+        checkShow: function() {
+            if(document.body.scrollTop < window.screen.availHeight ){
+                this.options.element.classList.add('hide')
+            }else{
+                this.options.element.classList.remove('hide')
+            }
+        }
+    }
+
+    function $(id){
+        return document.querySelector(id);
+    }
+    function $$(cls){
+        return document.querySelectorAll(cls);
+    }
+    new GoTop({
+        element: $("#go-top")
+    })
+</script>
+</html>

@@ -1,11 +1,123 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>resume</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul,li{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .wrap{
+            margin: 0 auto;
+            width: 600px;
+        }
+        .collapse{
+            border: 1px solid #dfe6ec;
+            border-radius: 4px;
+            color: #48576a;
+
+        }
+        .collapse-item{
+            border-bottom: 1px solid #dfe6ec;
+        }
+        .collapse-item.active .collapse-item-wrap{
+            display: block;
+        }
+        .collapse-item-header{
+            padding: 20px 10px;
+            border-bottom: 1px solid #dfe6ec;
+        }
+        .collapse-item-header>span{
+            padding: 0 20px 0 10px;
+            cursor: pointer;
+        }
+        .collapse-item-wrap{
+            padding: 20px;
+            display: none;
+        }
+        a{
+            text-decoration: none;
+            color: #48576a;
+            padding: 5px;
+            border: 1px solid #dfe6ec;
+            border-radius: 2px;
+            margin: 0 2px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <ul class="collapse">
+        <li class="collapse-item">
+            <div class="collapse-item-header"><span> > </span>原生JS组件</div>
+            <div class="collapse-item-wrap">
+                <a href="./tab.html">Tab标签页</a>
+                <a href="./goTop.html">goTop回到顶部</a>
+                <a href="#">collapse折叠面板（当前页面）</a>
+            </div>
+        </li>
+        <li class="collapse-item">
+            <div class="collapse-item-header"><span> > </span>jQuery组件</div>
+            <div class="collapse-item-wrap">
+                <a href="./lazyload.html">懒加载</a>
+                <a href="./carousel.html">carousel轮播</a>
+                <a href="./modal.html">modal模态框</a>
+                <a href="./waterfall.html">瀑布流</a>
+                <a href="./barrel.html">木桶布局</a>
+            </div>
+        </li>
+        <li class="collapse-item">
+            <div class="collapse-item-header"><span> > </span>其他</div>
+            <div class="collapse-item-wrap">
+                <a href="static.html">静态页面</a>
+                <a href="https://www.npmjs.com/package/liu-weather">查询天气的命令行工具</a>
+            </div>
+        </li>
+    </ul>
+</div>
+<script>
+    function Collapse(options) {
+        var defaultOptions = {
+
+        }
+        this.options = Object.assign({}, defaultOptions, options);
+        this.init();
+    }
+
+    Collapse.prototype = {
+        init: function(){
+            this.bindEvents();
+            return this;
+        },
+
+        bindEvents: function () {
+            var ele = this.options.element
+            this.options.element.addEventListener('click', function (e) {
+                var target = e.target
+                if(target.nodeName === 'SPAN'){
+                    target.parentNode.parentNode.classList.toggle('active')
+                }
+            })
+        }
+    }
+
+    function $(id){
+        return document.querySelector(id);
+    }
+    function $$(cls){
+        return document.querySelectorAll(cls);
+    }
+
+    var collapse = new Collapse({
+        element : $$(".collapse")[0],
+    })
+</script>
+
+</body>
 </html>
