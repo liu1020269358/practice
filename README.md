@@ -31,5 +31,5 @@
     * 静态页面 
         * [代码](./static.html)
         * [demo](https://liu1020269358.github.io/practice/static.html)
-     
+    * 查询天气的命令行工具
         * [代码](https://www.npmjs.com/package/liu-weather)
